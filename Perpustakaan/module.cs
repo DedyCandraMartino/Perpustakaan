@@ -11,26 +11,26 @@ using System.Windows.Forms;
 
 namespace Perpustakaan
 {
-    class Module1
+    class module
     {
         public SqlConnection conn;
         public SqlDataAdapter da;
         public SqlDataReader dr;
         public DataTable dt;
 
-        public readonly string namaServer = "Data Source=DESKTOP-5UJ2CS8\\SQLEXPRESS;Initial Catalog=perpustakaan;Integrated Security=True";
+        public readonly string NamaServer = "Data Source=DESKTOP-DF0KBGJ\\SQLEXPRESS;Initial Catalog=Perpustakaan_part2;Integrated Security=True";
 
         public SqlCommand cmd;
 
         public void koneksi()
         {
-            conn = new SqlConnection(namaServer);
+            conn = new SqlConnection(NamaServer);
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
         }
-
+        //untuk menutup koneksi data base
         public void closeKoneksi()
         {
             conn.Close();

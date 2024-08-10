@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Perpustakaan
 {
-    public partial class Status : Form
+    public partial class CariBuku : Form
     {
-        public Status()
+        public CariBuku()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Status_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
