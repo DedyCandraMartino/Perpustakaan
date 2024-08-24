@@ -17,22 +17,23 @@ namespace Perpustakaan
         public string idBuku;
         module mod = new module();
 
-        string id = "0";
+        string idAnggota = "0";
         bool aksi = false;
 
         //awal
-        void awal()
+        public void awal()
         {
             dataGridView1.DataSource = mod.getData("select * from anggota where nama_anggota like '%" + textBox1.Text + "%' ");
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Nama";
             dataGridView1.Columns[2].HeaderText = "Alamat";
+            textBox2.Enabled = false;
             groupBox1.Enabled = true;
             groupBox2.Enabled = false;
             groupBox3.Enabled = true;
 
-            id = "";
-            idBuku = "";
+            idAnggota = "0";
+            idBuku = "0";
             aksi = false;
         }
         //buka
@@ -49,6 +50,9 @@ namespace Perpustakaan
         //value-combobox
         void value()
         {
+            comboBox1.DataSource = mod.getData("select * from status");
+            comboBox1.DisplayMember = "status";
+            comboBox1.ValueMember = "idstatus";
 
         }
 
@@ -59,7 +63,7 @@ namespace Perpustakaan
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+          
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -88,13 +92,16 @@ namespace Perpustakaan
         private void button1_Click(object sender, EventArgs e)
         {
             CariBuku cariBuku = new CariBuku();
+            this.Close();
             cariBuku.Show();
+            
         }
 
         private void MenuUtama_Load(object sender, EventArgs e)
         {
+            
             awal();
-            comboBox1.SelectedIndex = 0;
+            value();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -104,7 +111,13 @@ namespace Perpustakaan
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0)
+            {
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                idAnggota = dataGridView1.Rows[e.RowIndex].Cells[0].ToString();
+
+                
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -121,6 +134,17 @@ namespace Perpustakaan
         {
             Pengembalian pengembalian = new Pengembalian();
             pengembalian.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (idAnggota == "0")
+            {
+                mod.pesan("pilih anggota");
+            }
+            else { 
+                buka();
+            }
         }
     }
 }

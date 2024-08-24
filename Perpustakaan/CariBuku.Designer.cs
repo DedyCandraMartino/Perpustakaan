@@ -84,7 +84,9 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "CariBuku";
             this.Text = "CariBuku";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CariBuku_FormClosing);
             this.Load += new System.EventHandler(this.CariBuku_Load);
+            this.Leave += new System.EventHandler(this.CariBuku_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
