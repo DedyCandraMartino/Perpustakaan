@@ -87,6 +87,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label3
@@ -115,6 +116,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Simpan";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -159,6 +161,7 @@
             this.button4.TabIndex = 11;
             this.button4.Text = "Ubah";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -168,6 +171,7 @@
             this.button5.TabIndex = 12;
             this.button5.Text = "Hapus";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox1
             // 
@@ -219,6 +223,7 @@
             this.Controls.Add(this.label1);
             this.Name = "anggota";
             this.Text = "anggota";
+            this.Load += new System.EventHandler(this.anggota_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

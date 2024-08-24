@@ -86,35 +86,42 @@ namespace Perpustakaan
             {
                 if (mod.dialogForm("apakah anda yakin akan menghapus?"))
                 {
-                    string sql = "delete form pustakawan where idpustakawan =" + id;
+                    string sql = "delete from pustakawan where idpustakawan =" + id;
                     mod.exc(sql);
                     awal();
                     MessageBox.Show("data dihapus");
+                    mod.clearForm(groupBox2);
                 }
             }
         }
-
+        //tombol simpan
         private void button1_Click(object sender, EventArgs e)
         {
             string sql;
-            if (!aksi)
+            if (mod.adakosong(groupBox2))
             {
-                sql = "insert into pustakawan values ('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
-                mod.exc(sql);
-                mod.clearForm(groupBox2);
-                MessageBox.Show("data ditambah");
-                awal();
+                MessageBox.Show("isi data terlebih dahulu!");
             }
             else
             {
-                sql = "update pustakawan set nama_pustakawan='" + textBox2.Text + "',alamat='" + textBox3.Text + "',username='" + textBox4.Text + "',password='" + textBox5.Text + "'";
-                mod.exc(sql);
-                mod.clearForm(groupBox2);
-                MessageBox.Show("data di update");
-                awal();
+                if (!aksi)
+                {
+                    sql = "insert into pustakawan values ('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
+                    mod.exc(sql);
+                    mod.clearForm(groupBox2);
+                    MessageBox.Show("data ditambah");
+                    awal();
+                }
+                else
+                {
+                    sql = "update pustakawan set nama_pustakawan='" + textBox2.Text + "',alamat='" + textBox3.Text + "',username='" + textBox4.Text + "',password='" + textBox5.Text + "'";
+                    mod.exc(sql);
+                    mod.clearForm(groupBox2);
+                    MessageBox.Show("data di update");
+                    awal();
+                }
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

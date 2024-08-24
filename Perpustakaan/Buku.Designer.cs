@@ -55,9 +55,9 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(-6, 83);
+            this.groupBox1.Location = new System.Drawing.Point(-6, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(276, 214);
+            this.groupBox1.Size = new System.Drawing.Size(276, 238);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
@@ -71,6 +71,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // textBox1
             // 
@@ -78,6 +79,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(126, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -92,7 +94,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(214, 34);
+            this.label1.Location = new System.Drawing.Point(236, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 22);
             this.label1.TabIndex = 16;
@@ -120,6 +122,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Batal";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -129,6 +132,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Simpan";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -157,6 +161,7 @@
             this.button5.TabIndex = 12;
             this.button5.Text = "Hapus";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -166,6 +171,7 @@
             this.button4.TabIndex = 11;
             this.button4.Text = "Ubah";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -175,6 +181,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Tambah";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox3
             // 
@@ -201,9 +208,9 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(268, 83);
+            this.groupBox2.Location = new System.Drawing.Point(268, 59);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(266, 214);
+            this.groupBox2.Size = new System.Drawing.Size(266, 238);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             // 
@@ -218,6 +225,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "Buku";
             this.Text = "Buku";
+            this.Load += new System.EventHandler(this.Buku_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

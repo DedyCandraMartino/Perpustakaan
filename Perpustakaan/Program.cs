@@ -16,7 +16,7 @@ namespace Perpustakaan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pustakawan());
+            Application.Run(new MenuUtama());
         }
     }
 }

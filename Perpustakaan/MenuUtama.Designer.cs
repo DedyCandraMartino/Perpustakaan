@@ -30,12 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pengembalianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.laporanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pustakawanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anggotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bukuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pengembalianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.laporanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -86,11 +86,33 @@
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.masterToolStripMenuItem.Text = "Master";
             // 
+            // pustakawanToolStripMenuItem
+            // 
+            this.pustakawanToolStripMenuItem.Name = "pustakawanToolStripMenuItem";
+            this.pustakawanToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.pustakawanToolStripMenuItem.Text = "Pustakawan";
+            this.pustakawanToolStripMenuItem.Click += new System.EventHandler(this.pustakawanToolStripMenuItem_Click);
+            // 
+            // anggotaToolStripMenuItem
+            // 
+            this.anggotaToolStripMenuItem.Name = "anggotaToolStripMenuItem";
+            this.anggotaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.anggotaToolStripMenuItem.Text = "Anggota";
+            this.anggotaToolStripMenuItem.Click += new System.EventHandler(this.anggotaToolStripMenuItem_Click);
+            // 
+            // bukuToolStripMenuItem
+            // 
+            this.bukuToolStripMenuItem.Name = "bukuToolStripMenuItem";
+            this.bukuToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.bukuToolStripMenuItem.Text = "Buku";
+            this.bukuToolStripMenuItem.Click += new System.EventHandler(this.bukuToolStripMenuItem_Click);
+            // 
             // pengembalianToolStripMenuItem
             // 
             this.pengembalianToolStripMenuItem.Name = "pengembalianToolStripMenuItem";
             this.pengembalianToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.pengembalianToolStripMenuItem.Text = "Pengembalian";
+            this.pengembalianToolStripMenuItem.Click += new System.EventHandler(this.pengembalianToolStripMenuItem_Click);
             // 
             // laporanToolStripMenuItem
             // 
@@ -103,24 +125,6 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.logOutToolStripMenuItem.Text = "LogOut";
-            // 
-            // pustakawanToolStripMenuItem
-            // 
-            this.pustakawanToolStripMenuItem.Name = "pustakawanToolStripMenuItem";
-            this.pustakawanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pustakawanToolStripMenuItem.Text = "Pustakawan";
-            // 
-            // anggotaToolStripMenuItem
-            // 
-            this.anggotaToolStripMenuItem.Name = "anggotaToolStripMenuItem";
-            this.anggotaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.anggotaToolStripMenuItem.Text = "Anggota";
-            // 
-            // bukuToolStripMenuItem
-            // 
-            this.bukuToolStripMenuItem.Name = "bukuToolStripMenuItem";
-            this.bukuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bukuToolStripMenuItem.Text = "Buku";
             // 
             // label1
             // 
@@ -207,9 +211,11 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(88, 20);
             this.textBox3.TabIndex = 10;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(87, 126);
             this.comboBox1.Name = "comboBox1";
@@ -232,6 +238,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Cari";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -267,6 +274,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(271, 197);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
@@ -309,6 +318,7 @@
             this.groupBox3.Size = new System.Drawing.Size(278, 102);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // MenuUtama
             // 
@@ -322,6 +332,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuUtama";
             this.Text = "MenuUtama";
+            this.Load += new System.EventHandler(this.MenuUtama_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -355,7 +366,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
@@ -366,5 +376,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.TextBox textBox3;
     }
 }
