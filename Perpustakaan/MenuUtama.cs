@@ -13,10 +13,11 @@ namespace Perpustakaan
     public partial class MenuUtama : Form
     {
         //deklarasi
+        public string pustakawan;
         public string idPustakawan;
         public string idBuku;
         module mod = new module();
-
+        Login login = new Login();
         string idAnggota = "0";
         bool aksi = false;
 
@@ -37,15 +38,17 @@ namespace Perpustakaan
             aksi = false;
         }
         //buka
-        void buka()
+        public void buka()
         {
             groupBox1.Enabled = false;
             groupBox2.Enabled = true;
             groupBox3.Enabled =false;
+            
         }
         public MenuUtama()
         {
             InitializeComponent();
+            
         }
         //value-combobox
         void value()
@@ -91,15 +94,13 @@ namespace Perpustakaan
         //btn-show-cariBuku
         private void button1_Click(object sender, EventArgs e)
         {
-            CariBuku cariBuku = new CariBuku();
-            this.Close();
-            cariBuku.Show();
+            CariBuku cr = new CariBuku(this);
+            cr.ShowDialog();
             
         }
 
         private void MenuUtama_Load(object sender, EventArgs e)
         {
-            
             awal();
             value();
         }
@@ -114,7 +115,7 @@ namespace Perpustakaan
             if (e.RowIndex >= 0)
             {
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                idAnggota = dataGridView1.Rows[e.RowIndex].Cells[0].ToString();
+                idAnggota = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                 
             }
@@ -145,6 +146,31 @@ namespace Perpustakaan
             else { 
                 buka();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            awal();
+            mod.clearForm(groupBox2);
+        }
+        //simpan
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (mod.adakosong(groupBox2))
+            {
+                mod.pesan("isi data terlebih dahulu");
+            }else{
+                string sql = "INSERT INTO transaksi VALUES '"+idPustakawan+"','"+idAnggota+"','"+idBuku+"','"+comboBox1.ValueMember+"','"+dateTimePicker1.Value.ToString("yyyy/MM/dd")+"',''";
+                mod.exc(sql);
+                mod.clearForm(groupBox2);
+                mod.pesan("data berhasil ditambah");
+                awal();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
