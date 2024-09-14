@@ -14,8 +14,8 @@ namespace Perpustakaan
     {
         //deklarasi
         public string pustakawan;
-        public string idPustakawan;
-        public string idBuku;
+        public string idPustakawan ="";
+        public string idBuku="";
         module mod = new module();
         Login login = new Login();
         string idAnggota = "0";
@@ -29,6 +29,7 @@ namespace Perpustakaan
             dataGridView1.Columns[1].HeaderText = "Nama";
             dataGridView1.Columns[2].HeaderText = "Alamat";
             textBox2.Enabled = false;
+            textBox3.Enabled = false;
             groupBox1.Enabled = true;
             groupBox2.Enabled = false;
             groupBox3.Enabled = true;
@@ -43,6 +44,7 @@ namespace Perpustakaan
             groupBox1.Enabled = false;
             groupBox2.Enabled = true;
             groupBox3.Enabled =false;
+            
             
         }
         public MenuUtama()
@@ -66,7 +68,7 @@ namespace Perpustakaan
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -101,8 +103,10 @@ namespace Perpustakaan
 
         private void MenuUtama_Load(object sender, EventArgs e)
         {
+            
             awal();
             value();
+            comboBox1.SelectedIndex = 1;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -150,6 +154,8 @@ namespace Perpustakaan
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
+            mod.pesan(comboBox1.SelectedValue.ToString());
             awal();
             mod.clearForm(groupBox2);
         }
@@ -160,7 +166,10 @@ namespace Perpustakaan
             {
                 mod.pesan("isi data terlebih dahulu");
             }else{
-                string sql = "INSERT INTO transaksi VALUES '"+idPustakawan+"','"+idAnggota+"','"+idBuku+"','"+comboBox1.ValueMember+"','"+dateTimePicker1.Value.ToString("yyyy/MM/dd")+"',''";
+                string sql = "INSERT INTO transaksi VALUES ('"+idPustakawan+"','"+idAnggota+"','"+idBuku+"','" +comboBox1.SelectedValue +"','"+dateTimePicker1.Value.ToString("yyyy/MM/dd")+"','')";
+                //mod.pesan(idPustakawan);
+                //mod.pesan(idAnggota);
+                //mod.pesan(idBuku);
                 mod.exc(sql);
                 mod.clearForm(groupBox2);
                 mod.pesan("data berhasil ditambah");
@@ -170,7 +179,18 @@ namespace Perpustakaan
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            awal();   
+        }
+
+        private void laporanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Laporan lp = new Laporan();
+            lp.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            awal();
         }
     }
 }

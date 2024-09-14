@@ -43,10 +43,8 @@ namespace Perpustakaan
                     
                 mu.textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 mu.idBuku = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-                mod.pesan(namaBuku);
                 
-                //this.Close();
+                this.Close();
                 
             }
         }
@@ -57,6 +55,11 @@ namespace Perpustakaan
         }
 
         private void CariBuku_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
