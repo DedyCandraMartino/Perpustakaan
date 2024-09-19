@@ -15,6 +15,7 @@ C:\Users\LAB RPL 3 - 02\Documents\Visual Studio 2013\Projects\c#\Perpustakaan\Pe
 C:\Users\LAB RPL 3 - 02\Documents\Visual Studio 2013\Projects\c#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.exe
 C:\Users\LAB RPL 3 - 02\Documents\Visual Studio 2013\Projects\c#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.pdb
 C:\Users\LAB RPL 3 - 02\Documents\Visual Studio 2013\Projects\c#\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 D:\c#dedy\Perpustakaan\Perpustakaan\bin\Debug\Perpustakaan.exe.config
 D:\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.exe
 D:\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.pdb
@@ -32,3 +33,22 @@ D:\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Properties.Resources.
 D:\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Pustakawan.resources
 D:\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Status.resources
 D:\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csproj.GenerateResource.Cache
+=======
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\bin\Debug\Perpustakaan.exe.config
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.exe
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.pdb
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\bin\Debug\Perpustakaan.exe
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\bin\Debug\Perpustakaan.pdb
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csprojResolveAssemblyReference.cache
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.anggota.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Buku.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.CariBuku.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Login.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Laporan.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.MenuUtama.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Pengembalian.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Properties.Resources.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Pustakawan.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.Status.resources
+C:\Users\LAB RPL 3 - 02\Desktop\c#dedy\Perpustakaan\Perpustakaan\obj\Debug\Perpustakaan.csproj.GenerateResource.Cache
+>>>>>>> 7f92eb215e310ccc9a1dcdaa5ad2c1d475bcc774

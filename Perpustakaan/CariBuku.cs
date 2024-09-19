@@ -10,9 +10,14 @@ using System.Windows.Forms;
 
 namespace Perpustakaan
 {
-    public partial class CariBuku : Form
+    public partial class CariBuku : Form 
     {
         module mod = new module();
+<<<<<<< HEAD
+=======
+        public string namaBuku;
+        string id, nama;
+>>>>>>> 7f92eb215e310ccc9a1dcdaa5ad2c1d475bcc774
         MenuUtama mu;
       
         public void awal()
@@ -38,12 +43,11 @@ namespace Perpustakaan
         {
             if (e.RowIndex >= 0)
             {
+                    
                 mu.textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 mu.idBuku = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-
                 
                 this.Close();
-                
                 
             }
         }
@@ -58,12 +62,16 @@ namespace Perpustakaan
 
         }
 
+<<<<<<< HEAD
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+=======
+        private void textBox1_TextChanged(object sender, EventArgs e)
+>>>>>>> 7f92eb215e310ccc9a1dcdaa5ad2c1d475bcc774
         {
 
         }
