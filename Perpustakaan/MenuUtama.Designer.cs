@@ -119,6 +119,7 @@
             this.laporanToolStripMenuItem.Name = "laporanToolStripMenuItem";
             this.laporanToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.laporanToolStripMenuItem.Text = "Laporan";
+            this.laporanToolStripMenuItem.Click += new System.EventHandler(this.laporanToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -190,6 +191,7 @@
             this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 7;
             this.label7.Text = "PUSTAKAWAN";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textBox1
             // 
@@ -248,6 +250,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Simpan";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -364,7 +367,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -378,5 +380,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.Label label7;
     }
 }

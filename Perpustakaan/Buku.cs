@@ -113,7 +113,7 @@ namespace Perpustakaan
                 }
                 else
                 {
-                    sql = "UPDATE status SET judul='" + textBox2.Text + "',penerbit='" + textBox3.Text + "'";
+                    sql = "UPDATE buku SET judul='" + textBox2.Text + "',penerbit='" + textBox3.Text + "'WHERE idbuku="+id;
                     mod.exc(sql);
                     mod.clearForm(groupBox2);
                     awal();

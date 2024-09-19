@@ -126,7 +126,7 @@ namespace Perpustakaan
                 }
                 else
                 {
-                    sql = "UPDATE anggota SET nama_anggota='" + textBox2.Text + "',alamat='" + textBox3.Text + "'";
+                    sql = "UPDATE anggota SET nama_anggota='" + textBox2.Text + "',alamat='" + textBox3.Text + "' WHERE idanggota="+id;
                     mod.exc(sql);
                     mod.clearForm(groupBox2);
                     awal();

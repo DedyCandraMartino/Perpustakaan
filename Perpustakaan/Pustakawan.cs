@@ -114,7 +114,7 @@ namespace Perpustakaan
                 }
                 else
                 {
-                    sql = "update pustakawan set nama_pustakawan='" + textBox2.Text + "',alamat='" + textBox3.Text + "',username='" + textBox4.Text + "',password='" + textBox5.Text + "'";
+                    sql = "update pustakawan set nama_pustakawan='" + textBox2.Text + "',alamat='" + textBox3.Text + "',username='" + textBox4.Text + "',password='" + textBox5.Text + "'idpustakawan="+id;
                     mod.exc(sql);
                     mod.clearForm(groupBox2);
                     MessageBox.Show("data di update");

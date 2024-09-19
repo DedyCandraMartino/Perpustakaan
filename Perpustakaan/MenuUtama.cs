@@ -13,11 +13,9 @@ namespace Perpustakaan
     public partial class MenuUtama : Form
     {
         //deklarasi
-        public string idPustakawan;
-        public string idBuku;
+        public string idPustakawan,idBuku,idAnggota;
         module mod = new module();
 
-        string idAnggota = "0";
         bool aksi = false;
 
         //awal
@@ -91,8 +89,8 @@ namespace Perpustakaan
         //btn-show-cariBuku
         private void button1_Click(object sender, EventArgs e)
         {
-            CariBuku cariBuku = new CariBuku();
-            this.Close();
+            CariBuku cariBuku = new CariBuku(this);
+           
             cariBuku.Show();
             
         }
@@ -114,7 +112,7 @@ namespace Perpustakaan
             if (e.RowIndex >= 0)
             {
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                idAnggota = dataGridView1.Rows[e.RowIndex].Cells[0].ToString();
+                idAnggota = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
                 
             }
@@ -145,6 +143,37 @@ namespace Perpustakaan
             else { 
                 buka();
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (idBuku=="0"||idAnggota=="0")
+            {
+                mod.pesan("isi data terlebih dahulu");
+            }
+            else
+            {
+                if (mod.dialogForm("Apakah anda yakin ingin menyimpan"))
+                {
+                    string sql = "INSERT INTO transaksi VALUES ('"+idPustakawan+"','"+idAnggota+"','"+idBuku+"','"+comboBox1.SelectedValue+"','"+dateTimePicker1.Value.ToString("yyyy/MM/dd")+"',NULL)";
+
+                    mod.exc(sql);
+                    mod.pesan("Peminjaman berhasil");
+                    mod.clearForm(groupBox2);
+                    groupBox2.Enabled = false;
+                }
+            }
+        }
+
+        private void laporanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Laporan lp = new Laporan();
+            lp.Show();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Perpustakaan
     public partial class CariBuku : Form
     {
         module mod = new module();
-        MenuUtama mu = new MenuUtama();
+        MenuUtama mu;
       
         public void awal()
         {
@@ -23,9 +23,10 @@ namespace Perpustakaan
             dataGridView1.Columns[2].HeaderText = "penerbit";
 
         }
-        public CariBuku()
+        public CariBuku(MenuUtama mu)
         {
             InitializeComponent();
+            this.mu = mu;
         }
 
         private void CariBuku_Load(object sender, EventArgs e)
@@ -53,6 +54,16 @@ namespace Perpustakaan
         }
 
         private void CariBuku_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -83,7 +83,7 @@ namespace Perpustakaan
             }
         }
 
-        public object getValue(string sql, string col)
+        public string getValue(string sql, string col)
         {
             koneksi();
             object value = null;
@@ -101,7 +101,7 @@ namespace Perpustakaan
                     else
                     {
                         value = dr[col];
-                        return value;
+                        return value.ToString();
                     }
                 }
                 else

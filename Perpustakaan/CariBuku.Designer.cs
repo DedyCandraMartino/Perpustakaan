@@ -63,6 +63,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(382, 245);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
@@ -75,6 +76,7 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cari Buku";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // CariBuku
             // 

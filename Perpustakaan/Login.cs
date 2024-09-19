@@ -16,6 +16,7 @@ namespace Perpustakaan
         {
             InitializeComponent();
         }
+        module mod = new module();
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -29,7 +30,27 @@ namespace Perpustakaan
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MenuUtama mu = new MenuUtama();
+            string sql = "SELECT * FROM pustakawan WHERE username='" + textBox1.Text + "' and password='" + textBox2.Text + "'";
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                mod.pesan("username atau password kosong");
+            }
+            else
+            {
+                if (mod.getCount(sql) > 0)
+                {
+                    mod.pesan("Login berhasil");
+                    mu.label7.Text = mod.getValue(sql, "nama_pustakawan");
+                    mu.idPustakawan = mod.getValue(sql, "idpustakawan");
+                    this.Hide();
+                    mu.Show();
+                }
+                else
+                {
+                    mod.pesan("Password salah");
+                }
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
